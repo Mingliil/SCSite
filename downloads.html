@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGMACRAFT | Downloads</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* ================= BACKGROUND ================= */
+
+body {
+    min-height: 100vh;
+    background-image: url("https://media.sellfy.store/images/HXX6fLbk/8MsE/1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+/* ================= GLASS ================= */
+
+.glass-effect {
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+/* ================= NAV ================= */
+
+.nav-btn {
+    transition: transform .15s ease;
+}
+.nav-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* ================= DOWNLOAD CARD ================= */
+
+.download-card {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.download-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+}
+
+.platform-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin: 0 auto 16px auto;
+    display: block;
+}
+</style>
+
+<style>
+.play-btn {
+    padding: 10px 22px;
+    border-radius: 9999px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+
+    /* cor fixa */
+    background: rgba(255,255,255,0.18);
+
+    /* glass */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.35);
+
+    /* sombra sutil */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.play-btn:hover {
+    /* NÃO muda cor */
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+
+.play-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+</style>
+
+</head>
+
+<body class="text-white font-sans">
+
+
+<main class="min-h-screen p-4 flex flex-col items-center">
+
+<header class="glass-effect rounded-xl p-4 mb-12 flex flex-col md:flex-row items-center justify-between mx-auto max-w-6xl w-full">
+
+    <div class="text-center md:text-left">
+        <h1 class="text-3xl font-extrabold">SIGMACRAFT</h1>
+        <p class="text-sm opacity-80 hidden md:block">
+            A experiência definitiva
+        </p>
+    </div>
+
+    <nav class="flex gap-3 my-4 md:my-0">
+        <a href="index.html" class="glass-effect nav-btn px-4 py-2 rounded-lg text-sm">HOME</a>
+        <a href="comunidade.html" class="glass-effect nav-btn px-4 py-2 rounded-lg text-sm">COMUNIDADE</a>
+        <a href="downloads.html" class="glass-effect nav-btn px-4 py-2 rounded-lg text-sm">DOWNLOADS</a>
+    </nav>
+
+ <a href="#" data-toggle="modal" data-target="#serverModal"
+   class="play-btn">
+     JOGAR
+</a>
+
+</header>
+
+<div class="modal fade" id="serverModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content glass-effect text-white rounded-2xl border-0">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-xl font-bold">
+          🎮 Conecte-se ao servidor
+        </h5>
+        <button type="button" class="close text-white" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p class="mb-3 opacity-90">
+          Copie o IP abaixo e cole no Minecraft:
+        </p>
+
+        <!-- IP BOX -->
+        <div class="glass-effect rounded-lg px-4 py-3 flex items-center justify-between gap-3">
+          <span id="serverIp" class="font-mono text-lg select-all">
+            play.sigmacraft.com
+          </span>
+          <button
+            onclick="copyIP()"
+            class="bg-indigo-600 hover:bg-indigo-700 px-3 py-2 rounded-lg text-sm font-bold transition"
+          >
+            COPIAR
+          </button>
+        </div>
+
+        <small class="block mt-3 opacity-70">
+          Compatível com Java
+        </small>
+      </div>
+
+      <div class="modal-footer border-0 justify-center">
+        <button type="button" class="btn btn-secondary px-4" data-dismiss="modal">
+          Fechar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ================= CONTEÚDO ================= -->
+<section class="w-full max-w-5xl">
+
+    <div class="glass-effect rounded-xl p-8 mb-10 text-center">
+        <h2 class="text-4xl font-extrabold mb-3">
+            Downloads Oficiais
+        </h2>
+        <p class="text-lg opacity-90">
+            Escolha sua plataforma para jogar no SIGMACRAFT
+        </p>
+    </div>
+
+    <!-- ================= DOWNLOAD GRID ================= -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+
+        <!-- WINDOWS -->
+        <div class="glass-effect download-card rounded-xl p-6 text-center ">
+           <img src="assets/windows.png" class="platform-icon" alt="Windows">
+            <h3 class="text-2xl font-bold mb-2 text-center">Windows</h3>    
+            <p class="opacity-80 mb-4"> 
+                Modpack feito para launchers modernos de minecraft
+            </p>
+            <a href="https://www.mediafire.com/file/g1ttw6e6c7ug3ni/sigmacraft-modpack.mrpack/file"
+               class="glass-effect rounded-full px-6 py-2 inline-block font-bold">
+               Download .mrpack
+            </a>
+        </div>
+
+        <html>
+
+
+
+
+
+        <!-- ANDROID -->
+        <div class="glass-effect download-card rounded-xl p-6 text-center">
+            <img src="assets/android.png" class="platform-icon" alt="android">
+            <h3 class="text-2xl font-bold mb-2">Android</h3>
+            <p class="opacity-80 mb-4">
+               Modpack Otimizado para pacotes mobiles
+            </p>
+            <a href="downloads/sigmacraft-android.apk"
+               class="glass-effect rounded-full px-6 py-2 inline-block font-bold">
+               Download .zip
+            </a>
+        </div>
+
+        <!-- ZIP -->
+        <div class="glass-effect download-card rounded-xl p-6 text-center">
+             <img src="assets/zip.png" class="platform-icon" alt="android">
+            <h3 class="text-2xl font-bold mb-2">Arquivo ZIP</h3>
+            <p class="opacity-80 mb-4">
+                Versão para minecraft não oficial primata
+            </p>
+            <a href="downloads/sigmacraft.zip"
+               class="glass-effect rounded-full px-6 py-2 inline-block font-bold">
+               Download .ZIP
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+</body>
+</html>

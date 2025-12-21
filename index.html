@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGMACRAFT</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* ================= BACKGROUND FIXO ================= */
+
+body {
+    min-height: 100vh;
+    background-image: url("https://media.sellfy.store/images/HXX6fLbk/8MsE/1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Escurecimento suave para legibilidade */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+/* ================= GLASS EFFECT ================= */
+
+.glass-effect {
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+/* ================= BOTÕES ================= */
+
+.nav-btn {
+    transition: all .2s ease;
+}
+.nav-btn:hover {
+    background: rgba(255,255,255,0.35);
+    transform: translateY(-1px);
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+function copyIP() {
+    const ip = document.getElementById("serverIp").innerText;
+    navigator.clipboard.writeText(ip).then(() => {
+        alert("IP copiado: " + ip);
+    });
+}
+</script>
+
+<style>
+.play-btn {
+    padding: 10px 22px;
+    border-radius: 9999px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+
+    /* cor fixa */
+    background: rgba(255,255,255,0.18);
+
+    /* glass */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.35);
+
+    /* sombra sutil */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.play-btn:hover {
+    /* NÃO muda cor */
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+
+.play-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+</style>
+
+</head>
+
+<body class="text-white font-sans">
+
+<main class="min-h-screen p-4 flex flex-col items-center">
+
+<!-- ================= NAVBAR ================= -->
+<header class="glass-effect rounded-xl p-4 mb-12 flex flex-col md:flex-row items-center justify-between mx-auto max-w-6xl w-full">
+
+    <div class="text-center md:text-left">
+        <h1 class="text-3xl font-extrabold">SIGMACRAFT</h1>
+        <p class="text-sm opacity-80 hidden md:block">
+            A experiência definitiva
+        </p>
+    </div>
+
+    <nav class="flex gap-3 my-4 md:my-0">
+        <a href="index.html" class="glass-effect nav-btn px-4 py-2 rounded-lg text-sm">HOME</a>
+        <a href="comunidade.html" class="glass-effect nav-btn px-4 py-2 rounded-lg text-sm">COMUNIDADE</a>
+        <a href="downloads.html" class="glass-effect nav-btn px-4 py-2 rounded-lg text-sm">DOWNLOADS</a>
+    </nav>
+
+ <a href="#" data-toggle="modal" data-target="#serverModal"
+   class="play-btn">
+     JOGAR
+</a>
+
+</header>
+
+<!-- ================= CONTEÚDO CENTRAL ================= -->
+<section class="flex-grow flex items-center justify-center w-full max-w-4xl">
+    <div class="glass-effect rounded-xl p-8 text-center">
+        <h2 class="text-5xl font-extrabold mb-4">
+            LANÇAMENTO IMINENTE
+        </h2>
+        <p class="text-xl italic opacity-90">
+            Estamos preparando a atualização mais épica de todas.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<!-- ================= MODAL GLASS ================= -->
+<div class="modal fade" id="serverModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content glass-effect text-white rounded-2xl border-0">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-xl font-bold">
+          🎮 Conecte-se ao servidor
+        </h5>
+        <button type="button" class="close text-white" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p class="mb-3 opacity-90">
+          Copie o IP abaixo e cole no Minecraft:
+        </p>
+
+        <!-- IP BOX -->
+        <div class="glass-effect rounded-lg px-4 py-3 flex items-center justify-between gap-3">
+          <span id="serverIp" class="font-mono text-lg select-all">
+            play.sigmacraft.com
+          </span>
+          <button
+            onclick="copyIP()"
+            class="bg-indigo-600 hover:bg-indigo-700 px-3 py-2 rounded-lg text-sm font-bold transition"
+          >
+            COPIAR
+          </button>
+        </div>
+
+        <small class="block mt-3 opacity-70">
+          Compatível com Java
+        </small>
+      </div>
+
+      <div class="modal-footer border-0 justify-center">
+        <button type="button" class="btn btn-secondary px-4" data-dismiss="modal">
+          Fechar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
