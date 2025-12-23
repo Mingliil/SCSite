@@ -7,7 +7,7 @@ window.onload = () =>{
 // Retrieved 2025-12-21, License - CC BY-SA 3.0
 //goat
 function TimerEvento(){
-var end = new Date('03/01/2026 10:1 AM');
+var end = new Date('01/03/2026 10:1 AM');
     var _miliseconds = 1;
     var _second = 1000;
     var _minute = _second * 60;
